@@ -1,0 +1,88 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #F68829;
+}
+
+div{
+  background-color: #fff;
+  color: #F68829;
+  height: 10%;
+  position: relative;
+  text-align: center;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: alternate;
+}
+
+div:nth-child(odd){
+  -webkit-animation-name: slideFromLeft;
+}
+
+div:nth-child(even){
+  -webkit-animation-name: slideFromRight;
+}
+
+h1{
+  font-size: 4em;
+}
+
+h2{
+  font-size: 2em;
+}
+
+h1, h2{
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-name: textOpacity;
+}
+
+
+h1::before, h2::before{
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+@-webkit-keyframes slideFromLeft{
+  from{
+    margin-left: 100%;
+  }
+
+  to{
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes slideFromRight{
+  from{
+    margin-right: 100%;
+  }
+
+  to{
+    margin-right: 0%;
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes textOpacity{
+  0%{
+    font-size: 1em;
+    opacity:0;
+  }
+
+  90%{
+    font-size: 4em;
+    opacity:1;
+  }
+}
